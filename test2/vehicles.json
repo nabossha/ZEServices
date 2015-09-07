@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "VehicleName": "Zoe",
+    "OperationResultType": "CHARGENOTINPROGRESS",
+    "OperationDateAndTime": "2015-09-03T07:55:15.000Z",
+    "CruisingRange": "150",
+    "BatteryRemainingPercent": "93",
+    "PluginState": "NOT_CONNECTED",
+    "BatteryChargingSpot": "INVALID",
+    "LastChargeStartDate": "2015-08-30T06:36:56.000Z",
+    "LastChargeEndDate": "2015-08-30T08:50:14.000Z",
+    "LastChargePercentage": "100",
+    "SchedulerStatus": "DEACTIVATED",
+    "LastUpdateFromAPI": "2015-09-03T15:08:07.672Z"
+  },
+  {
+    "id": "2",
+    "VehicleName": "Zeus",
+    "OperationResultType": "CHARGENOTINPROGRESS",
+    "OperationDateAndTime": "2015-09-03T07:55:15.000Z",
+    "CruisingRange": "88",
+    "BatteryRemainingPercent": "48",
+    "PluginState": "NOT_CONNECTED",
+    "BatteryChargingSpot": "INVALID",
+    "LastChargeStartDate": "2015-08-30T06:36:56.000Z",
+    "LastChargeEndDate": "2015-08-30T08:50:14.000Z",
+    "LastChargePercentage": "100",
+    "SchedulerStatus": "DEACTIVATED",
+    "LastUpdateFromAPI": "2015-09-03T15:08:07.672Z"
+  }
+
+]

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:SmartphoneGetCurrentDataResponse xmlns:ns4="urn:com:renault:gdc:type:smartphoneEvDashboard:v1" xmlns:ns3="urn:com:renault:gdc:type:evDashboard:v1" xmlns:ns2="urn:com:renault:gdc:type:portalcommon:v1">
+    <ns3:GetCurrentDataResponse>
+        <StateOfCharge>
+            <ns3:OperationResultType>CHARGEINPROGRESS</ns3:OperationResultType>
+            <ns3:OperationDateAndTime>2015-09-07T18:15:39.000Z</ns3:OperationDateAndTime>
+            <ns3:BatteryStatus>
+                <ns3:BatteryCapacityPercent>0</ns3:BatteryCapacityPercent>
+                <ns3:BatteryRemainingPercent>84</ns3:BatteryRemainingPercent>
+                <ns3:CruisingRange>123</ns3:CruisingRange>
+            </ns3:BatteryStatus>
+            <ns3:LowChargeAlert>false</ns3:LowChargeAlert>
+            <ns2:PluginState>CONNECTED</ns2:PluginState>
+            <ns3:ChargeCompleteTime>2015-09-07T19:00:39.000Z</ns3:ChargeCompleteTime>
+            <ns3:BatteryChargingSpot>SEMI_FAST_CHARGING</ns3:BatteryChargingSpot>
+        </StateOfCharge>
+        <LastChargeInfo>
+            <ns3:StartTime>2015-09-07T17:15:41.000Z</ns3:StartTime>
+        </LastChargeInfo>
+        <StateOfNextCharge>
+            <SchedulerStatus>ACTIVATED</SchedulerStatus>
+            <OffBoardSchedulerStatus>ACKNOWLEDGED</OffBoardSchedulerStatus>
+            <NextScheduledChargeTime>2015-09-08T17:15:00.000Z</NextScheduledChargeTime>
+        </StateOfNextCharge>
+        <ClimateControl/>
+        <LastChargeStateMonitor/>
+        <ManualUpdateOkayTime>2015-09-07T18:15:39.000Z</ManualUpdateOkayTime>
+        <NextSocUpdateTime>2015-09-07T18:15:39.000Z</NextSocUpdateTime>
+        <ServerTime>2015-09-07T18:32:04.968Z</ServerTime>
+    </ns3:GetCurrentDataResponse>
+</ns4:SmartphoneGetCurrentDataResponse>

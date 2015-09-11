@@ -8,16 +8,17 @@ vehiclestatusApp.controller('VehicleListCtrl', ['$scope', '$http', function ($sc
     $scope.loadServerData = function(event) {
         url = '/application.php?returnJSON=true';
         $('.loadbutton').addClass('loadingdata');
-        // $http.get('test.json').
+        $('#errorwindow').hide();
         $http.get(url).
             success(function (data) {
                 // Save the data to local storage
                 //localStorage[url] = data;
-                console.log(data);
                 $scope.callBack(data);
             }).
-            error(function () {
-                console.log("AJAX-Fehler");
+            error(function (error) {
+                console.log("AJAX-Fehler: " + error);
+                $('#errorwindow').show().html(error);
+                $('.loadbutton').removeClass('loadingdata');
                 if (!!localStorage[url]) {
                     // We have some data cached, return that to the callback.
                     $scope.callback(localStorage[url]);

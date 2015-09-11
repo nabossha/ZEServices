@@ -118,8 +118,20 @@ h2 {
 .battery .battery-level.low {
     background-color: #FF3333;
 }
-
-
+#errorwindow {
+    display: none;
+    width: 90%;
+    margin: 0 auto 1rem auto;
+    padding: 1rem;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+}
+#errorwindow * {
+    font-size: 12px;
+    line-height: 13px;
+    margin: 0;
+    padding: 0;
+}
 .loadbutton span {
     float: left;
 }

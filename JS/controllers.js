@@ -16,18 +16,16 @@ vehiclestatusApp.controller('VehicleListCtrl', ['$scope', '$http', function ($sc
                 $scope.callBack(data);
             }).
             error(function (error) {
-                console.log("AJAX-Fehler: " + error);
                 $('#errorwindow').show().html(error);
                 $('.loadbutton').removeClass('loadingdata');
                 if (!!localStorage[url]) {
                     // We have some data cached, return that to the callback.
                     $scope.callback(localStorage[url]);
-                    return;
                 }
             });
     };
     $scope.callBack = function(data) {
-        console.log(data);
+        //console.log(data);
         try {
             $('#page').data('plugin_xpull').reset();
             $('.loadbutton').removeClass('loadingdata');
@@ -57,8 +55,6 @@ vehiclestatusApp.controller('VehicleListCtrl', ['$scope', '$http', function ($sc
     angular.element(document).ready(function () {
         $scope.loadServerData("initial");
     });
-
-    //$scope.orderProp = 'id';
 }]);
 
 /*

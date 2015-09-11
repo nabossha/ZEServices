@@ -91,6 +91,7 @@
 			</div>
 		</div>
 	</div>
+	<div id="errorwindow"></div>
 	<button class="centered loadbutton" data-ng-click="loadServerData('event')">
 		<span>Daten aktualisieren</span>
 		<div class="spinner">

@@ -6,7 +6,7 @@ var vehiclestatusApp = angular.module('vehiclestatusApp', ['elif']);
 vehiclestatusApp.controller('VehicleListCtrl', ['$scope', '$http', function ($scope, $http) {
 
     $scope.loadServerData = function(event) {
-        url = '/application.php?returnJSON=true';
+        url = 'application.php?returnJSON=true';
         $('.loadbutton').addClass('loadingdata');
         $('#errorwindow').hide();
         $http.get(url).

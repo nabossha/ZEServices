@@ -63,7 +63,7 @@
 								/
 								<span ng-if="vehicle.charging==false" class="red">lädt nicht</span>
 								<span ng-else-if="vehicle.charging==true" class="green">wird geladen</span>
-								<span ng-else class="orange">{{vehicle.OperationResultType}} <br>({{vehicle.charging_point}})</span>
+								<span ng-else class="orange">{{vehicle.charging}} <br>({{vehicle.charging_point}})</span>
 
 								<span ng-if="vehicle.charging==true && vehicle.charging_point=='ACCELERATED'">
 									<br>(beschleunigtes Laden)
@@ -75,11 +75,11 @@
 						</tr>
 						<tr>
 							<td>
-								<div ng-if="vehicle.OperationResultType=='CHARGEINPROGRESS'">
-								<span class="tablerowsmalltitle">Beginn des aktuellen Ladevorgangs:</span> {{vehicle.last_update|date:'d. MMMM HH:mm'}}
+								<div ng-if="vehicle.charging==true">
+								<span class="tablerowsmalltitle">Beginn des aktuellen Ladevorgangs:</span> {{vehicle.previous.date|date:'d. MMMM HH:mm'}}
 								</div>
 								<div ng-else>
-								<span class="tablerowsmalltitle">Ende letzter Ladevorgang:</span> {{vehicle.previous.date|date:'d. MMMM HH:mm'}} ({{vehicle.previous.charge_level}}%)
+								<span class="tablerowsmalltitle">Ende letzter Ladevorgang:</span> {{vehicle.previous.date|date:'d. MMMM HH:mm'}} ({{vehicle.previous.charge_level}}% / {{vehicle.previous.remaining_autonomy}}km)
 								</div>
 							</td>
 						</tr>

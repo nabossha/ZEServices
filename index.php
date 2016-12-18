@@ -49,26 +49,26 @@
 						<tr>
 							<td class="tableoverviewrow">
 								<h2 class="vehiclename">{{vehicle.VehicleName}}</h2>
-								<div class="vehicleshortstate"><span class="remainingCharge">{{vehicle.CruisingRange}}</span>km &mdash; <span class="remainingCharge">{{vehicle.BatteryRemainingPercent}}</span>%</div>
+								<div class="vehicleshortstate"><span class="remainingCharge">{{vehicle.remaining_range}}</span>km &mdash; <span class="remainingCharge">{{vehicle.charge_level}}</span>%</div>
 								<div class="battery">
-									<div class="battery-level" ng-class="setChargeDisplayColor(vehicle.BatteryRemainingPercent)" ng-style="setChargeDisplay(vehicle.BatteryRemainingPercent)"></div>
+									<div class="battery-level" ng-class="setChargeDisplayColor(vehicle.charge_level)" ng-style="setChargeDisplay(vehicle.charge_level)"></div>
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<td><span class="tablerowsmalltitle">Status am {{vehicle.OperationDateAndTime|date:'d. MMMM HH:mm'}}</span>
-								<span ng-if="vehicle.PluginState=='NOT_CONNECTED'" class="red">nicht verbunden</span>
-								<span ng-else-if="vehicle.PluginState=='CONNECTED'" class="green">verbunden</span>
-								<span ng-else class="orange">{{vehicle.PluginState}}</span>
+							<td><span class="tablerowsmalltitle">Status am {{vehicle.last_update|date:'d. MMMM HH:mm'}}</span>
+								<span ng-if="vehicle.plugged==false" class="red">nicht verbunden</span>
+								<span ng-else-if="vehicle.plugged==true" class="green">verbunden</span>
+								<span ng-else class="orange">{{vehicle.plugged}}</span>
 								/
-								<span ng-if="vehicle.OperationResultType=='CHARGENOTINPROGRESS'" class="red">lädt nicht</span>
-								<span ng-else-if="vehicle.OperationResultType=='CHARGEINPROGRESS'" class="green">wird geladen</span>
-								<span ng-else class="orange">{{vehicle.OperationResultType}} <br>({{vehicle.BatteryChargingSpot}})</span>
+								<span ng-if="vehicle.charging==false" class="red">lädt nicht</span>
+								<span ng-else-if="vehicle.charging==true" class="green">wird geladen</span>
+								<span ng-else class="orange">{{vehicle.OperationResultType}} <br>({{vehicle.charging_point}})</span>
 
-								<span ng-if="vehicle.OperationResultType=='CHARGEINPROGRESS' && vehicle.BatteryChargingSpot=='SEMI_FAST_CHARGING'">
+								<span ng-if="vehicle.charging==true && vehicle.charging_point=='ACCELERATED'">
 									<br>(beschleunigtes Laden)
 								</span>
-								<span ng-if="vehicle.OperationResultType=='CHARGEINPROGRESS' && vehicle.BatteryChargingSpot=='SLOW_CHARGING'">
+								<span ng-if="vehicle.charging==true && vehicle.charging_point=='SLOW_CHARGING'">
 									<br>(langsames Laden)
 								</span>
 							</td>
@@ -76,10 +76,10 @@
 						<tr>
 							<td>
 								<div ng-if="vehicle.OperationResultType=='CHARGEINPROGRESS'">
-								<span class="tablerowsmalltitle">Beginn des aktuellen Ladevorgangs:</span> {{vehicle.LastChargeStartDate|date:'d. MMMM HH:mm'}}
+								<span class="tablerowsmalltitle">Beginn des aktuellen Ladevorgangs:</span> {{vehicle.last_update|date:'d. MMMM HH:mm'}}
 								</div>
 								<div ng-else>
-								<span class="tablerowsmalltitle">Ende letzter Ladevorgang:</span> {{vehicle.LastChargeEndDate|date:'d. MMMM HH:mm'}} ({{vehicle.LastChargePercentage}}%)
+								<span class="tablerowsmalltitle">Ende letzter Ladevorgang:</span> {{vehicle.previous.date|date:'d. MMMM HH:mm'}} ({{vehicle.previous.charge_level}}%)
 								</div>
 							</td>
 						</tr>

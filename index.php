@@ -76,7 +76,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div ng-if="vehicle.charging==true">
+								<div ng-if="vehicle.previous.type=='START_NOTIFICATION'">
 								<span class="tablerowsmalltitle">Beginn des aktuellen Ladevorgangs:</span> {{vehicle.previous.date|date:'d. MMMM HH:mm'}}
 								</div>
 								<div ng-else>

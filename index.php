@@ -24,6 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="Styles/custom.css">
 	<script src="JS/jquery-2.1.3.min.js" type="text/javascript"></script>
 	<script src="JS/angular.min.js" type="text/javascript"></script>
+	<script src="JS/angular-locale_de-ch.js"></script>
 	<script src="JS/elif.js" type="text/javascript"></script>
 	<script src="JS/xpull.js" type="text/javascript"></script>
 	<script src="JS/controllers.js" type="text/javascript"></script>

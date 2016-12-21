@@ -23,7 +23,9 @@
 	<link rel="stylesheet" type="text/css" href="Styles/xpull.css">
 	<link rel="stylesheet" type="text/css" href="Styles/custom.css">
 	<script src="JS/jquery-2.1.3.min.js" type="text/javascript"></script>
+	<script src="JS/moment-with-locales.js" type="text/javascript"></script>
 	<script src="JS/angular.min.js" type="text/javascript"></script>
+	<script src="JS/angular-moment.min.js"></script>
 	<script src="JS/angular-locale_de-ch.js"></script>
 	<script src="JS/elif.js" type="text/javascript"></script>
 	<script src="JS/xpull.js" type="text/javascript"></script>
@@ -67,10 +69,10 @@
 								<span ng-else class="orange">{{vehicle.charging}} <br>({{vehicle.charging_point}})</span>
 
 								<span ng-if="vehicle.charging==true && vehicle.charging_point=='ACCELERATED'">
-									<br>(beschleunigtes Laden)
+									<br>(beschleunigtes Laden / {{vehicle.remaining_time}} Minuten / {{ vehicle.last_update | amAdd: vehicle.remaining_time:'minutes' | amDateFormat: 'HH:mm' }})
 								</span>
-								<span ng-if="vehicle.charging==true && vehicle.charging_point=='SLOW_CHARGING'">
-									<br>(langsames Laden)
+								<span ng-if="vehicle.charging==true && vehicle.charging_point=='SLOW'">
+									<br>(langsames Laden / {{vehicle.remaining_time}} Minuten / {{ vehicle.last_update | amAdd: vehicle.remaining_time:'minutes' | amDateFormat: 'HH:mm' }})
 								</span>
 							</td>
 						</tr>
@@ -80,7 +82,7 @@
 								<span class="tablerowsmalltitle">Beginn des aktuellen Ladevorgangs:</span> {{vehicle.previous.date|date:'d. MMMM HH:mm'}}
 								</div>
 								<div ng-else>
-								<span class="tablerowsmalltitle">Ende letzter Ladevorgang:</span> {{vehicle.previous.date|date:'d. MMMM HH:mm'}} ({{vehicle.previous.charge_level}}% / {{vehicle.previous.remaining_autonomy}}km)
+								<span class="tablerowsmalltitle">Ende letzter Ladevorgang:</span> {{vehicle.previous.date|date:'d. MMMM HH:mm'}} ({{vehicle.previous.remaining_autonomy}}km / {{vehicle.previous.charge_level}}%)
 								</div>
 							</td>
 						</tr>

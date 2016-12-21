@@ -1,7 +1,7 @@
 /**
  * Created by nabossha on 03.09.2015.
  */
-var vehiclestatusApp = angular.module('vehiclestatusApp', ['elif']);
+var vehiclestatusApp = angular.module('vehiclestatusApp', ['elif','angularMoment']);
 
 vehiclestatusApp.controller('VehicleListCtrl', ['$scope', '$http', function ($scope, $http) {
 

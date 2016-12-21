@@ -12,6 +12,8 @@ Styles/custom.css
 
 JS/angular.min.js
 JS/angular-locale_de-ch.js
+JS/angular-moment.min.js
+JS/moment-with-locales.js
 JS/elif.js
 JS/jquery-2.1.3.min.js
 JS/xpull.js

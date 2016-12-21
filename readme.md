@@ -9,3 +9,6 @@ you need a local or remote webserver running PHP
 ### Usage:
 rename config-example.php to config.php and fill in your credentials from Z.E.Services
 
+
+### Icons by:
+www.flaticon.com

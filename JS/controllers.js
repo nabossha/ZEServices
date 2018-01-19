@@ -49,6 +49,10 @@ vehiclestatusApp.controller('VehicleListCtrl', ['$scope', '$http', function ($sc
                 return "high";
             }
         };
+        // fix: since IOS11 tehre seems to be a resize-bug with ng-repeat:
+        setTimeout(function(){
+            $('.section.values').width('100%');
+            }, 500);
     };
 
     // init on page load:

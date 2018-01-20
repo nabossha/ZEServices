@@ -1,6 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-config.php
-
 ### macOS template
 *.DS_Store
 .AppleDouble
@@ -29,3 +27,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+/config.php
+/composer.lock
+/composer.phar
+/vehicles.json

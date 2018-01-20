@@ -8,6 +8,7 @@
  *
  */
 $confArray = [
+    "debug"         => false,                   // if true, outputs a logfile.txt with some additional info
     "returnJSON"    => true,                // true => output JSON in browser + write to file // false: write only to file (file must exist)
     "JSONfile"      => "vehicles.json",     // name of output-file
     "maxBufferAge"  => 300,                 // age (in seconds) of local buffer file - this prevents us from querying the API too much

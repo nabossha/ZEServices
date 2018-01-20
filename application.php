@@ -167,7 +167,15 @@ function checkLocalStatus($filetoCheck) {
 ////////////////////////////////////////////////////////////////////////
 ///  not finished log-function....
 function addLog($logEntry) {
-
-    //echo('<br>'.$logEntry);
+    global $confArray;
+    if(!$confArray["debug"]) {
+        return;
+    }
+    $logfileName = "logfile.txt";
+    $fd = fopen($logfileName, "a");
+    // write string
+    fwrite($fd, $logEntry . "\n");
+    // close file
+    fclose($fd);
 
 }
